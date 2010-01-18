@@ -1,0 +1,45 @@
+Author
+====
+Niranjan Sarade
+
+About the utility - EmailPopReader
+====
+POP3 (Post Office Protocol) is the standard client/server protocol to receive emails.
+In ruby, we have a libray called Net::POP3 which provides functionality for retrieving 
+email via POP3. In that, you basically start the pop session for accessing the emails
+and close the pop session at the end.
+
+TMail library has a complete way to handle and manipulate emails from within ruby code.
+It allows you to treat an email totally as an object.
+
+There can be a business requirement for scanning emails and storing those in some sort of data structure to process further.
+This utility makes use of Net::POP3 and TMail libraries and provides with some handy methods such as 
+'retrieve emails' as array of hashes. The hash has email's from,to,cc,bcc,subject,body fields. Email body with attachment has not been considered
+for simplicity.
+
+It also provides 'delete_emails(unique_email_ids=[])' method which takes array of unique email ids (retrieved with pop email unique_id) as parameter
+and deletes those.
+
+This gem has a TMail gem dependency.
+
+Example
+====
+
+You can set the following three valiables in either environment.rb file in RAILS application or as global constants.
+POP_HOST
+POP_USERNAME
+POP_PASSWORD
+
+pop_reader = EmailPopReader.new
+emails = pop_reader.retrieve_emails
+pop_reader.delete_emails <array of email unique ids to be deleted>
+
+Install
+====
+gem install http://github.com/NiranjanSarade/email-pop-reader.git/
+
+Uninstall
+====
+gem uninstall email_pop_reader
+
+
