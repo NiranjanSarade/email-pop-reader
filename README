@@ -36,7 +36,8 @@ pop_reader.delete_emails <array of email unique ids to be deleted>
 
 Install
 ====
-gem install http://github.com/NiranjanSarade/email-pop-reader.git/
+Download the gem file from http://github.com/NiranjanSarade/email-pop-reader.git/
+gem install email-pop-reader
 
 Uninstall
 ====
