@@ -12,9 +12,8 @@ and close the pop session at the end.
 TMail library has a complete way to handle and manipulate emails from within ruby code.
 It allows you to treat an email totally as an object.
 
-There can be a business requirement for scanning emails and storing those in some sort of data structure to process further.
-This utility makes use of Net::POP3 and TMail libraries and provides with some handy methods such as 
-'retrieve emails' as array of hashes. The hash has email's from,to,cc,bcc,subject,body fields. Email body with attachment has not been considered
+There can be a business requirement for scanning emails from mail-in database and storing those in some sort of data structure to process further.
+This utility makes use of Net::POP3 and TMail libraries and provides with some handy methods such as 'retrieve emails' as array of hashes. The hash has email's from,to,cc,bcc,subject,body fields. Email body with attachment has not been considered
 for simplicity.
 
 It also provides 'delete_emails(unique_email_ids=[])' method which takes array of unique email ids (retrieved with pop email unique_id) as parameter
@@ -36,8 +35,14 @@ pop_reader.delete_emails <array of email unique ids to be deleted>
 
 Install
 ====
+gem install email_pop_reader
+
+(It has been pushed to http://gemcutter.org)
+
+OR
+
 Download the gem file from http://github.com/NiranjanSarade/email-pop-reader.git/
-gem install email-pop-reader
+gem install email_pop_reader-0.0.1.gem
 
 Uninstall
 ====
